@@ -1,0 +1,232 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+.border {
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+/* CONTENEDORES */
+
+.containerContacto {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 25% 1fr 1fr;
+  grid-template-rows: 25% 0.5fr 1.5fr 20%;
+  gap: 1px 1px;
+  grid-template-areas:
+    "headerImagen headerNav headerNav"
+    "aside1 Titulo Titulo"
+    "aside1 formulario formulario"
+    "footerText footerMap footerImg";
+  min-height: 100vh;
+  overflow: auto;
+  background-color: #96c8fb;
+  background-image: linear-gradient(315deg, #96c8fb 0%, #ddbdfc 74%);
+}
+
+
+/* HEADER Y NAV (COMPARTIDOS EN TODOS) */
+
+.headerImagen {
+  grid-area: headerImagen;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.headerNav {
+  grid-area: headerNav;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.headerNav div a {
+  font-size: large;
+  border-bottom: 4px solid #911ca0;
+  font-weight: 800;
+  padding: 10px;
+}
+
+.footerImg {
+  grid-area: footerImg;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px;
+  overflow: hidden;
+}
+
+.footerImg img {
+  display: flex;
+  flex-wrap: wrap;
+  height: 80%;
+  width: 80%;
+  margin-left: 30px;
+}
+
+.footerMap {
+  grid-area: footerMap;
+  display: flex;
+  flex-flow: column;
+
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+}
+
+.footerText {
+  grid-area: footerText;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.footerText span {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+/* CSS CONTACTO */
+
+.Titulo {
+  grid-area: Titulo;
+  text-align: center;
+  font-size: 50px;
+  text-decoration: underline;
+  padding-top: 20px;
+  color: #911ca0;
+}
+
+.formulario {
+  grid-area: formulario;
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.aside1 {
+  display: flex;
+  grid-area: aside1;
+}
+
+label {
+  text-align: left;
+  font-size: 20px;
+}
+
+
+/* TABLET */
+@media (min-width: 481px) and (max-width: 1023px) {
+  .containerContacto {
+    display: grid;
+    grid-template-columns: 35% 1fr 1fr;
+    grid-template-rows: 15% 15% 1fr 10% 5%;
+    gap: 1px 1px;
+    grid-auto-flow: column;
+    grid-template-areas:
+      "headerImagen headerNav headerNav"
+      "aside1 Titulo Titulo"
+      "aside1 formulario formulario"
+      "footerMap footerMap footerImg"
+      "footerText footerText footerText";
+    min-height: 100vh;
+    overflow: auto;
+  }
+
+  .headerNav div a {
+    font-size: medium;
+  }
+
+  .footerText {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-size: auto;
+    padding: 20px;
+  }
+
+  .footerText span {
+    font-size: 12px;
+  }
+}
+
+.Titulo {
+  font-size: 40px;
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+  .containerContacto {
+    display: grid;
+    grid-template-columns: 35% 1fr 1fr;
+    grid-template-rows: 10% 15% 1fr 10% 5%;
+    gap: 1px 1px;
+    grid-auto-flow: column;
+    grid-template-areas:
+      "headerImagen headerNav headerNav"
+      "Titulo Titulo Titulo"
+      "formulario formulario formulario"
+      "footerMap footerMap footerImg"
+      "footerText footerText footerText";
+    min-height: 100vh;
+    overflow: auto;
+  }
+
+  .aside1 {
+    display: none;
+  }
+
+  .headerNav div a {
+    font-size: small;
+    border-bottom: 4px solid #911ca0;
+    font-weight: 800;
+    padding: 10px;
+  }
+
+  .footerText {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-size: auto;
+    padding: 20px;
+  }
+
+  .footerText span {
+    font-size: 10px;
+  }
+
+  .aside {
+    display: none;
+  }
+
+  .seccion1 span {
+    font-size: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-style: italic;
+  }
+
+  .seccion2 span {
+    font-size: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-style: italic;
+  }
+}

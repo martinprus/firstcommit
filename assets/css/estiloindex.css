@@ -1,0 +1,257 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+.border {
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+/* CONTENEDORES */
+
+.containerIndex {
+  display: grid;
+  grid-template-columns: 25% 1fr 1fr;
+  grid-template-rows: 25% 1fr 1fr 15%;
+  gap: 1px 1px;
+  grid-auto-flow: column;
+  grid-template-areas:
+    "headerImagen headerNav headerNav"
+    "aside seccion1 seccion1"
+    "aside seccion2 seccion2"
+    "footerText footerMap footerImg";
+  min-height: 100vh;
+  overflow: auto;
+  background-color: #f2cf43;
+  background-image: linear-gradient(315deg, #f2cf43 0%, #19a186 74%);
+}
+
+/* HEADER Y NAV (COMPARTIDOS EN TODOS) */
+
+.headerImagen {
+  grid-area: headerImagen;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.headerNav {
+  grid-area: headerNav;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.headerNav div a {
+  font-size: large;
+  border-bottom: 4px solid #f2cf43;
+  font-weight: 800;
+  padding: 10px;
+}
+
+.footerImg {
+  grid-area: footerImg;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px;
+  overflow: hidden;
+}
+
+.footerImg img {
+  display: flex;
+  flex-wrap: wrap;
+  height: 80%;
+  width: 80%;
+  margin-left: 30px;
+}
+
+.footerMap {
+  grid-area: footerMap;
+  display: flex;
+  flex-flow: column;
+
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+}
+
+.footerText {
+  grid-area: footerText;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.footerText span {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+/* CSS INDEX */
+
+.seccion1 {
+  display: flex;
+  grid-area: seccion1;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.seccion1 span {
+  font-size: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  font-style: italic;
+}
+
+.seccion1 video {
+  border: 5px solid green;
+}
+
+.seccion2 {
+  display: flex;
+  grid-area: seccion2;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.seccion2 span {
+  font-size: 25px;
+  margin-left: 25px;
+  margin-right: 30px;
+  font-style: italic;
+}
+
+.seccion2 iframe {
+  margin-left: 30px;
+  border: 5px solid green;
+}
+
+.aside {
+  grid-area: aside;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/* TABLET */
+@media (min-width: 481px) and (max-width: 1023px) {
+  .containerIndex {
+    display: grid;
+    grid-template-columns: 35% 1fr 1fr;
+    grid-template-rows: 10% 1fr 1fr 10% 5%;
+    gap: 1px 1px;
+    grid-auto-flow: column;
+    grid-template-areas:
+      "headerImagen headerNav headerNav"
+      "seccion1 seccion1 seccion1"
+      "seccion2 seccion2 seccion2"
+      "footerMap footerMap footerImg"
+      "footerText footerText footerText";
+    min-height: 100vh;
+    overflow: auto;
+  }
+
+  .headerNav div a {
+    font-size: medium;
+  }
+
+  .footerText {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-size: auto;
+    padding: 20px;
+  }
+
+  .footerText span {
+    font-size: 12px;
+  }
+}
+
+.aside {
+  display: none;
+}
+
+.seccion1 span {
+  font-size: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-style: italic;
+}
+
+.seccion2 span {
+  font-size: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-style: italic;
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+  .containerIndex {
+    display: grid;
+    grid-template-columns: 35% 1fr 1fr;
+    grid-template-rows: 25% 1fr 1fr 10% 5%;
+    gap: 1px 1px;
+    grid-auto-flow: column;
+    grid-template-areas:
+      "headerImagen headerNav headerNav"
+      "seccion1 seccion1 seccion1"
+      "seccion2 seccion2 seccion2"
+      "footerMap footerMap footerImg"
+      "footerText footerText footerText";
+    min-height: 100vh;
+    overflow: auto;
+  }
+
+  .headerNav div a {
+    font-size: small;
+    border-bottom: 4px solid #f2cf43;
+    font-weight: 800;
+  }
+
+  .footerText {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-size: auto;
+    padding: 20px;
+  }
+
+  .footerText span {
+    font-size: 10px;
+  }
+
+  .aside {
+    display: none;
+  }
+
+  .seccion1 span {
+    font-size: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-style: italic;
+  }
+
+  .seccion2 span {
+    font-size: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-style: italic;
+  }
+}
